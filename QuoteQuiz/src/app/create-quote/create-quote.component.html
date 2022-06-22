@@ -1,0 +1,15 @@
+<form [formGroup]="quoteForm" (ngSubmit)="submit()">
+    <div class="mb-3">
+        <label for="user" class="form-label">quote</label>
+        <input type="text" class="form-control"  formControlName="content">
+      </div>
+      <div class="mb-3">
+        <label>Author</label>
+        <select class="custom-select" (change)="onAuthorChange($event)">
+          <option *ngFor="let author of authors">
+            {{author.firstName}} {{author.lastName}}
+          </option>
+        </select>
+      </div>
+      <button class="btn btn-primary" type="submit">Submit</button>
+</form>

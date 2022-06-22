@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col5">
+        <a routerLink="/game">Play Game</a>
+    </div>
+</div>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Username</th>
+            <th scope="col">Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let player of players; index as i">
+            <td>{{i+1}}</td>
+            <td>{{player.username}}</td>
+            <td>{{player.recordScore}}</td>
+        </tr>
+    </tbody>
+</table>
+

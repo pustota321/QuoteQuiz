@@ -1,0 +1,37 @@
+<div class="row" style="margin: 50px;" *ngIf="authors">
+    <h2>Delete Authors</h2>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>first name</th>
+                <th>last name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let author of authors">
+                <td (click)="onAuthorRowClick(author.id)">{{author.firstName}}</td>
+                <td (click)="onRowClick(author.id)">{{author.lastName}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="row" style="margin: 50px;" *ngIf="quotes">
+    <h2>Delete Quotes</h2>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>content</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let quote of quotes">
+                <td (click)="onQuoteRowClick(quote.id)">{{quote.content}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div *ngIf="!authors && !quotes">
+    <h2>There are no data to delete</h2>
+</div>

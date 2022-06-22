@@ -1,0 +1,11 @@
+button{
+    margin-inline: 40px;
+}
+#author{
+    justify-content: center;
+}
+#but-author{
+    width: 30%;
+    height: 5%;
+    margin-top: 2px;
+}

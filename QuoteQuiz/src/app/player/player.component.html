@@ -1,0 +1,8 @@
+<form [formGroup]="userForm" (ngSubmit)="submitUsername()">
+    <div class="mb-3">
+        <label for="user" class="form-label">Username</label>
+        <input type="text" class="form-control"  formControlName="username" aria-describedby="usernameHelp">
+        <div id="usernameHelp" class="form-text">Enter username and start game</div>
+      </div>
+      <button class="btn btn-primary" type="submit">Submit</button>
+</form>

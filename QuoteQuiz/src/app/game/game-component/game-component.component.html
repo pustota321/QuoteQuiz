@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-2">
+        <label>Game Mode:</label>
+        <select class="form-control" #enabled (change)="changeMode()">
+            <option value="true" [attr.selected]="inBinaryMode ? 'selected' : null">Binary</option>
+            <option value="false" [attr.selected]="!inBinaryMode ? 'selected' : null">Clasic</option>
+        </select>
+    </div>
+    <div class="col">
+        <h2>Score : {{correctAnswers}}</h2>
+    </div>
+</div>
+<div style="margin:30px ;" *ngIf="question">
+    <div class="row" >
+        <div class="col-2" style="border:2px solid black;">
+            <p>Who said that?</p>
+            <div style="background-color:pink;">
+                <p style="word-wrap:break-word">{{question.quote}}</p>
+            </div>
+            <div *ngIf="inBinaryMode">
+                <p id="author">{{binaryModeAuthor.firstName}} {{binaryModeAuthor.lastName}}</p>
+                <button class="btn btn-success" (click)="onYes()">Yes</button>
+                <button class="btn btn-danger" (click)="onNo()">No</button>
+            </div> 
+            <div *ngIf="!inBinaryMode">
+                <div *ngFor="let author of authors">
+                    <button id="but-author" class="btn btn-secondary" (click)="onAuthorClick(author.isAnswer)">{{author.firstName}} {{author.lastName}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="!question" style="margin: 50px;">
+    <h2>quotes are loading or try to add some</h2>
+</div>
