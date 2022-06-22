@@ -3,13 +3,19 @@
         <label for="user" class="form-label">quote</label>
         <input type="text" class="form-control"  formControlName="content">
       </div>
-      <div class="mb-3">
+      <div class="mb-3" *ngIf="authors.length">
         <label>Author</label>
-        <select class="custom-select" (change)="onAuthorChange($event)">
-          <option *ngFor="let author of authors">
-            {{author.firstName}} {{author.lastName}}
-          </option>
-        </select>
-      </div>
+        <div >
+          <select class="custom-select" (change)="onAuthorChange($event)" >
+            <option *ngFor="let author of authors">
+              {{author.firstName}} {{author.lastName}}
+            </option>
+          </select>
+        </div>
+    </div>
+    <div *ngIf="!authors.length">
+      <h2>No Authors! First Add Some!</h2>
+    </div>
       <button class="btn btn-primary" type="submit">Submit</button>
 </form>
+<a class="link-success" routerLink="/game">Back to Game</a>

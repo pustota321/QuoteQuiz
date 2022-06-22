@@ -29,7 +29,9 @@ import { DeleteContentComponent } from './delete-content/delete-content.componen
       {path: "game", component: GameComponent},
       {path: "players", component: ScoreBoardComponent},
       {path: "create-quote", component:CreateQuoteComponent},
-      {path: "delete-content", component:DeleteContentComponent}
+      {path: "create-author", component:CreateAuthorComponent},
+      {path: "delete-content", component:DeleteContentComponent},
+      {path:"**", component:PlayerComponent}
     ])
   ],
   providers: [],
