@@ -1,0 +1,8 @@
+ASP .Net Core, Web Api, Entity Framework Core, Sql Server, Angular and bootstrap were used to create this application!
+
+As Task was quite simple I didn't complicate it with using bunch of design patterns or other concepts, 
+only Generic Repository and Unit Of Work patterns were used. Application implements basic crud operations 
+for two main entities: Quote and Author of quote. It allows user to play in two different modes and stores
+results achieved during playing, also player can see acheievemnts of other players and compete with them.
+Hope you enjoy it
+ 
